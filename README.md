@@ -1,7 +1,7 @@
 # LogianTeam
 
 Alperen Müftüoğlu 211216055 <br />
-Nahit Mamati  <br />
+Nahit Mamati 211216030 <br />
 Yunus Emre Çavuşoğlu <br />
 Ertuğrul Faruk Pişkin 211216041 <br />
 
