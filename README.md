@@ -5,7 +5,7 @@ Nahit Mamati  <br />
 Yunus Emre Çavuşoğlu <br />
 Ertuğrul Faruk Pişkin 211216041 <br />
 
-Super Visor Keyvan Arasteh =  https://github.com/keyvanarasteh
+Supervisor Keyvan Arasteh =  https://github.com/keyvanarasteh
 
 
 
