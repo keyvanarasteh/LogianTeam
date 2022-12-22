@@ -1,9 +1,9 @@
 # LogianTeam
 
-Alperen Müftüoğlu 211216055 
-Nahit Mamati  
-Yunus Emre Çavuşoğlu 
-Ertuğrul Faruk Pişkin
+Alperen Müftüoğlu 211216055 <br />
+Nahit Mamati  <br />
+Yunus Emre Çavuşoğlu <br />
+Ertuğrul Faruk Pişkin 211216041 <br />
 
 Super Visor Keyvan Arasteh =  https://github.com/keyvanarasteh
 
