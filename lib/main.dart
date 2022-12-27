@@ -1,5 +1,5 @@
 import 'package:angle_on/constants/app_constants.dart';
-import 'package:angle_on/screens/MyBottomNavigationBar.dart';
+import 'package:angle_on/device/mobile.dart';
 import 'package:angle_on/screens/select_screen_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,16 +20,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
       title: 'Angle on',
       theme: ThemeData(
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: AppConstants.primaryAngleOnColor),
-        primaryColor: AppConstants.primaryAngleOnColor,
-        scaffoldBackgroundColor: AppConstants.primaryAngleOnColor,
-        backgroundColor: AppConstants.primaryAngleOnColor,
-        appBarTheme: AppBarTheme(color: AppConstants.primaryAngleOnColor)
-      ),
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              backgroundColor: AppConstants.primaryAngleOnColor),
+          primaryColor: AppConstants.primaryAngleOnColor,
+          scaffoldBackgroundColor: AppConstants.primaryAngleOnColor,
+          backgroundColor: AppConstants.primaryAngleOnColor,
+          appBarTheme: AppBarTheme(color: AppConstants.primaryAngleOnColor)),
       home: const SelectScreen(),
     );
   }

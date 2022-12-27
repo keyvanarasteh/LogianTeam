@@ -2,8 +2,8 @@ import 'package:angle_on/constants/app_constants.dart';
 import 'package:angle_on/screens/my_picks_page.dart';
 import 'package:angle_on/screens/profile_page.dart';
 import 'package:flutter/material.dart';
-import 'discover_page.dart';
-import 'home_page.dart';
+import '../screens/discover_page.dart';
+import '../screens/home_page.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   const MyBottomNavigationBar({Key? key}) : super(key: key);
@@ -13,7 +13,6 @@ class MyBottomNavigationBar extends StatefulWidget {
 }
 
 class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
-
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
@@ -40,8 +39,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         selectedIconTheme: IconThemeData(
           shadows: [
             Shadow(
-            blurRadius: 40,
-            color: AppConstants.secondAngleOnColor,
+              blurRadius: 40,
+              color: AppConstants.secondAngleOnColor,
             )
           ],
         ),

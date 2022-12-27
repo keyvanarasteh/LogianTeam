@@ -22,61 +22,66 @@ class _DesktopState extends State<Desktop> {
         leading: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(width: 25,),
+            SizedBox(
+              width: 25,
+            ),
             Text(
               "Angle",
               style: TextStyle(
-                  color: AppConstants.secondAngleOnColor,
-                  fontSize: 20
-              ),
+                  color: AppConstants.secondAngleOnColor, fontSize: 20),
             ),
             SizedBox(width: 6),
-            Text("O",
+            Text(
+              "O",
               style: TextStyle(
                   color: AppConstants.secondAngleOnColor,
                   fontSize: 20,
                   shadows: [
-                    Shadow(color: AppConstants.secondAngleOnColor,blurRadius: 30,)
-                  ]
-              ),
+                    Shadow(
+                      color: AppConstants.secondAngleOnColor,
+                      blurRadius: 30,
+                    )
+                  ]),
             ),
             Text(
               "N",
               style: TextStyle(
-                  color: AppConstants.secondAngleOnColor,
-                  fontSize: 20
-              ),
+                  color: AppConstants.secondAngleOnColor, fontSize: 20),
             ),
-
           ],
         ),
         title: Row(
           children: [
             TextButton(
                 style: ButtonStyle(
-                    overlayColor: MaterialStatePropertyAll<Color>(Colors.transparent)
-                ),
+                    overlayColor:
+                        MaterialStatePropertyAll<Color>(Colors.transparent)),
                 onPressed: () {
                   pageController = 0;
-                  setState(() {
-
-                  });
+                  setState(() {});
                 },
                 child: Text(
                   "Home",
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white
-                  ),
-                )
-            ),
-            TextButton(onPressed: () { pageController = 1;setState(() {
-
-            });}, child: Text("Discover",style: TextStyle(fontSize: 20,color: Colors.white),)),
-            TextButton(onPressed: () {pageController = 2;
-              setState(() {
-
-              });}, child: Text("My Pick",style: TextStyle(fontSize: 20,color: Colors.white),)),
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                )),
+            TextButton(
+                onPressed: () {
+                  pageController = 1;
+                  setState(() {});
+                },
+                child: Text(
+                  "Discover",
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                )),
+            TextButton(
+                onPressed: () {
+                  pageController = 2;
+                  setState(() {});
+                },
+                child: Text(
+                  "My Pick",
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                )),
           ],
         ),
         actions: [
@@ -88,14 +93,8 @@ class _DesktopState extends State<Desktop> {
       ),
       body: IndexedStack(
         index: pageController,
-        children: [
-          HomePage(),
-          DiscoverPage(),
-          MyPicksPage()
-        ],
+        children: [HomePage(), DiscoverPage(), MyPicksPage()],
       ),
     );
   }
 }
-
-

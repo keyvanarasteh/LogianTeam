@@ -1,5 +1,5 @@
-import 'package:angle_on/components/desktop_appBar.dart';
-import 'package:angle_on/screens/MyBottomNavigationBar.dart';
+import 'package:angle_on/device/desktop.dart';
+import 'package:angle_on/device/mobile.dart';
 import 'package:angle_on/screens/discover_page.dart';
 import 'package:angle_on/screens/home_page.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ class SelectScreen extends StatefulWidget {
 class _SelectScreenState extends State<SelectScreen> {
   var deviceType = "Mobile";
   @override
-  detectDevice(width){
+  detectDevice(width) {
     if (width <= 450)
       return "Mobile";
     else if (width <= 800)
@@ -24,17 +24,17 @@ class _SelectScreenState extends State<SelectScreen> {
     else
       return "Large";
   }
+
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     deviceType = detectDevice(width);
 
-    switch(deviceType)
-    {
-      case("Mobile"):
+    switch (deviceType) {
+      case ("Mobile"):
         return MyBottomNavigationBar();
-      case("Tablet"):
+      case ("Tablet"):
         return MyBottomNavigationBar();
-      case("Laptop"):
+      case ("Laptop"):
         return Desktop();
       default:
         return MyBottomNavigationBar();

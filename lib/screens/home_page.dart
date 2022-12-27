@@ -22,19 +22,47 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   List<HomeMovieCard> cards = [
-    HomeMovieCard(movieImage: "assets/interstellar2.png",grey: false,title: "Interstellar"),
-    HomeMovieCard(movieImage: "assets/seven.png",grey: true,title: "Seven"),
-    HomeMovieCard(movieImage: "assets/contact.png",grey: true,title: "Contact"),
-    HomeMovieCard(movieImage: "assets/fight_club.png",grey: true,title: "Fight Club"),
-    HomeMovieCard(movieImage: "assets/whiplash.png",grey: true,title: "Whiplash"),
-    HomeMovieCard(movieImage: "assets/before_sunrise.png",grey: true,title: "Before Sunrise"),
-    HomeMovieCard(movieImage: "assets/recepivedik1.png",grey: true,title: "Recep İvedik 1"),
-    HomeMovieCard(movieImage: "assets/recepivedik2.png",grey: true,title: "Recep İvedik 2"),
-    HomeMovieCard(movieImage: "assets/recepivedik3.png",grey: true,title: "Recep İvedik 3"),
-    HomeMovieCard(movieImage: "assets/recepivedik4.png",grey: true,title: "Recep İvedik 4"),
-    HomeMovieCard(movieImage: "assets/recepivedik5.png",grey: true,title: "Recep İvedik 5"),
-    HomeMovieCard(movieImage: "assets/recepivedik6.png",grey: true,title: "Recep İvedik 6"),
-    HomeMovieCard(movieImage: "assets/inception.png",grey: true,title: "Inception"),
+    HomeMovieCard(
+        movieImage: "assets/interstellar2.png",
+        grey: false,
+        title: "Interstellar"),
+    HomeMovieCard(movieImage: "assets/seven.png", grey: true, title: "Seven"),
+    HomeMovieCard(
+        movieImage: "assets/contact.png", grey: true, title: "Contact"),
+    HomeMovieCard(
+        movieImage: "assets/fight_club.png", grey: true, title: "Fight Club"),
+    HomeMovieCard(
+        movieImage: "assets/whiplash.png", grey: true, title: "Whiplash"),
+    HomeMovieCard(
+        movieImage: "assets/before_sunrise.png",
+        grey: true,
+        title: "Before Sunrise"),
+    HomeMovieCard(
+        movieImage: "assets/recepivedik1.png",
+        grey: true,
+        title: "Recep İvedik 1"),
+    HomeMovieCard(
+        movieImage: "assets/recepivedik2.png",
+        grey: true,
+        title: "Recep İvedik 2"),
+    HomeMovieCard(
+        movieImage: "assets/recepivedik3.png",
+        grey: true,
+        title: "Recep İvedik 3"),
+    HomeMovieCard(
+        movieImage: "assets/recepivedik4.png",
+        grey: true,
+        title: "Recep İvedik 4"),
+    HomeMovieCard(
+        movieImage: "assets/recepivedik5.png",
+        grey: true,
+        title: "Recep İvedik 5"),
+    HomeMovieCard(
+        movieImage: "assets/recepivedik6.png",
+        grey: true,
+        title: "Recep İvedik 6"),
+    HomeMovieCard(
+        movieImage: "assets/inception.png", grey: true, title: "Inception"),
   ];
   List<ChannelCard> channelCards = [
     ChannelCard(channelImage: "assets/BBC.png"),
@@ -48,135 +76,165 @@ class _HomePageState extends State<HomePage> {
   ];
 
   List<BottomCard> bottomCards = [
-  BottomCard(bottomImage: "assets/interstellar2.png"),
-  BottomCard(bottomImage: "assets/seven.png"),
-  BottomCard(bottomImage: "assets/contact.png"),
-  BottomCard(bottomImage: "assets/fight_club.png"),
-  BottomCard(bottomImage: "assets/whiplash.png"),
-  BottomCard(bottomImage: "assets/before_sunrise.png"),
-  BottomCard(bottomImage: "assets/recepivedik1.png"),
-  BottomCard(bottomImage: "assets/recepivedik2.png"),
-  BottomCard(bottomImage: "assets/recepivedik3.png"),
-  BottomCard(bottomImage: "assets/interstellar.png"),
-  BottomCard(bottomImage: "assets/recepivedik4.png"),
-  BottomCard(bottomImage: "assets/recepivedik5.png"),
-  BottomCard(bottomImage: "assets/recepivedik6.png"),
-  BottomCard(bottomImage: "assets/inception.png"),
+    BottomCard(bottomImage: "assets/interstellar2.png"),
+    BottomCard(bottomImage: "assets/seven.png"),
+    BottomCard(bottomImage: "assets/contact.png"),
+    BottomCard(bottomImage: "assets/fight_club.png"),
+    BottomCard(bottomImage: "assets/whiplash.png"),
+    BottomCard(bottomImage: "assets/before_sunrise.png"),
+    BottomCard(bottomImage: "assets/recepivedik1.png"),
+    BottomCard(bottomImage: "assets/recepivedik2.png"),
+    BottomCard(bottomImage: "assets/recepivedik3.png"),
+    BottomCard(bottomImage: "assets/interstellar.png"),
+    BottomCard(bottomImage: "assets/recepivedik4.png"),
+    BottomCard(bottomImage: "assets/recepivedik5.png"),
+    BottomCard(bottomImage: "assets/recepivedik6.png"),
+    BottomCard(bottomImage: "assets/inception.png"),
   ];
 
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var appBarheight = AppBar().preferredSize.height;
     return Scaffold(
-      appBar: PreferredSize(preferredSize: Size(width, appBarheight),child:width<= 800 ?MobileAppBar() : SizedBox()),
-      body:
-          Column(
-            children: [
-              //Expanded(child: Image.asset("assets/alperen.jpeg",color: Colors.black,colorBlendMode: BlendMode.saturation,)),
-              Expanded(
-                  flex: 40,
-                  child: CarouselSlider.builder(
-                      itemCount: cards.length, itemBuilder: (context, index, realIndex) {
-                    return HomeMovieCardDesign(item: cards[index]);
-                  }, options: CarouselOptions(
-                    aspectRatio: 18/9,
-                    autoPlay: true,enlargeCenterPage: true,enlargeStrategy: CenterPageEnlargeStrategy.height,onPageChanged: (index, reason) {
-                    setState(() {
-                      for (int i = 0; i < cards.length; i++)
-                      {
-                        cards[i].grey = true;
-                      }
-                      cards[index].grey = false;
-                    });
-                  },))
-              ),
-              Expanded(flex:15,
-                  child: ListView.builder(
-                    itemCount: channelCards.length,
-                    scrollDirection: Axis.horizontal,
-                    physics: BouncingScrollPhysics(),
-                    padding: EdgeInsets.symmetric(horizontal: 12),
-                    itemBuilder: (context, index) {
-                      return ChannelCardDesign(item: channelCards[index]);
-                    },)),
-              Expanded(flex:45,child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: Column(
-                  children: [
-                    BottomTitles(item: BottomTitle(bottomTitle: "Continue Watching")),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: width <= 450 ? 150 : width < 800 ? 250 : 350,
-                        child: ListView.builder(
-                          padding: EdgeInsets.symmetric(horizontal: 12),
-                          physics: BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: bottomCards.length,
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) {
-                            return BottomCardDesign(item: bottomCards[index]);
-                          },),
+        appBar: PreferredSize(
+            preferredSize: Size(width, appBarheight),
+            child: width <= 800 ? MobileAppBar() : SizedBox()),
+        body: Column(
+          children: [
+            //Expanded(child: Image.asset("assets/alperen.jpeg",color: Colors.black,colorBlendMode: BlendMode.saturation,)),
+            Expanded(
+                flex: 40,
+                child: CarouselSlider.builder(
+                    itemCount: cards.length,
+                    itemBuilder: (context, index, realIndex) {
+                      return HomeMovieCardDesign(item: cards[index]);
+                    },
+                    options: CarouselOptions(
+                      aspectRatio: 18 / 9,
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                      enlargeStrategy: CenterPageEnlargeStrategy.height,
+                      onPageChanged: (index, reason) {
+                        setState(() {
+                          for (int i = 0; i < cards.length; i++) {
+                            cards[i].grey = true;
+                          }
+                          cards[index].grey = false;
+                        });
+                      },
+                    ))),
+            Expanded(
+                flex: 15,
+                child: ListView.builder(
+                  itemCount: channelCards.length,
+                  scrollDirection: Axis.horizontal,
+                  physics: BouncingScrollPhysics(),
+                  padding: EdgeInsets.symmetric(horizontal: 12),
+                  itemBuilder: (context, index) {
+                    return ChannelCardDesign(item: channelCards[index]);
+                  },
+                )),
+            Expanded(
+                flex: 45,
+                child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      BottomTitles(
+                          item: BottomTitle(bottomTitle: "Continue Watching")),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: SizedBox(
+                          width: double.infinity,
+                          height: width <= 450
+                              ? 150
+                              : width < 800
+                                  ? 250
+                                  : 350,
+                          child: ListView.builder(
+                            padding: EdgeInsets.symmetric(horizontal: 12),
+                            physics: BouncingScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: bottomCards.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return BottomCardDesign(item: bottomCards[index]);
+                            },
+                          ),
+                        ),
                       ),
-                    ),
-                    BottomTitles(item: BottomTitle(bottomTitle: "Most Wanted")),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: width <= 450 ? 150 : width < 800 ? 250 : 350,
-                        child: ListView.builder(
-                          padding: EdgeInsets.symmetric(horizontal: 12),
-                          physics: BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: bottomCards.length,
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) {
-                            return BottomCardDesign(item: bottomCards[index]);
-                          },),
+                      BottomTitles(
+                          item: BottomTitle(bottomTitle: "Most Wanted")),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: SizedBox(
+                          width: double.infinity,
+                          height: width <= 450
+                              ? 150
+                              : width < 800
+                                  ? 250
+                                  : 350,
+                          child: ListView.builder(
+                            padding: EdgeInsets.symmetric(horizontal: 12),
+                            physics: BouncingScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: bottomCards.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return BottomCardDesign(item: bottomCards[index]);
+                            },
+                          ),
+                        ),
                       ),
-                    ),
-                    BottomTitles(item: BottomTitle(bottomTitle: "My List")),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: width <= 450 ? 150 : width < 800 ? 250 : 350,
-                        child: ListView.builder(
-                          padding: EdgeInsets.symmetric(horizontal: 12),
-                          physics: BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: bottomCards.length,
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) {
-                            return BottomCardDesign(item: bottomCards[index]);
-                          },),
+                      BottomTitles(item: BottomTitle(bottomTitle: "My List")),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: SizedBox(
+                          width: double.infinity,
+                          height: width <= 450
+                              ? 150
+                              : width < 800
+                                  ? 250
+                                  : 350,
+                          child: ListView.builder(
+                            padding: EdgeInsets.symmetric(horizontal: 12),
+                            physics: BouncingScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: bottomCards.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return BottomCardDesign(item: bottomCards[index]);
+                            },
+                          ),
+                        ),
                       ),
-                    ),
-                    BottomTitles(item: BottomTitle(bottomTitle: "Ertuğrul List")),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: width <= 450 ? 150 : width < 800 ? 250 : 350,
-                        child: ListView.builder(
-                          padding: EdgeInsets.symmetric(horizontal: 12),
-                          physics: BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: bottomCards.length,
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) {
-                            return BottomCardDesign(item: bottomCards[index]);
-                          },),
+                      BottomTitles(
+                          item: BottomTitle(bottomTitle: "Ertuğrul List")),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: SizedBox(
+                          width: double.infinity,
+                          height: width <= 450
+                              ? 150
+                              : width < 800
+                                  ? 250
+                                  : 350,
+                          child: ListView.builder(
+                            padding: EdgeInsets.symmetric(horizontal: 12),
+                            physics: BouncingScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: bottomCards.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return BottomCardDesign(item: bottomCards[index]);
+                            },
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              )
-              ),
-            ],
-          )
-    );
+                    ],
+                  ),
+                )),
+          ],
+        ));
   }
 }
