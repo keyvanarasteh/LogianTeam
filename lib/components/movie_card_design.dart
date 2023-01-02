@@ -15,24 +15,21 @@ class MovieCardDesign extends StatefulWidget {
 class _MovieCardDesignState extends State<MovieCardDesign> {
   @override
   Widget build(BuildContext context) {
-    return Hero(
-      tag: 'dash',
-      child: InkWell(
-        onTap: () {
-          setState(() {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DescriptionPage(item: widget.item!),
-                ));
-          });
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            image: DecorationImage(
-                image: AssetImage(widget.item!.movieImage), fit: BoxFit.cover),
-          ),
+    return InkWell(
+      onTap: () {
+        setState(() {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DescriptionPage(item: widget.item!),
+              ));
+        });
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          image: DecorationImage(
+              image: AssetImage(widget.item!.movieImage), fit: BoxFit.cover),
         ),
       ),
     );

@@ -302,7 +302,6 @@ class _HomePageState extends State<DiscoverPage> {
                       mainAxisSpacing: Checkbox.width,
                       crossAxisSpacing: Checkbox.width),
                   itemCount: cards.length,
-
                   shrinkWrap: true,
                   // physics: BouncingScrollPhysics(),
                   itemBuilder: (context, index)

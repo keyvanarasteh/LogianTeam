@@ -1,5 +1,6 @@
 import 'package:angle_on/constants/app_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -9,6 +10,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  var _selected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,39 +76,47 @@ class _ProfilePageState extends State<ProfilePage> {
           SliverList(
             delegate: SliverChildListDelegate([
               ListTile(
-                onTap: () {
-                  setState(() {
-                    ExpansionPanel(
-                        canTapOnHeader: true,
-                        isExpanded: true,
-                        headerBuilder: (context, isExpanded) {
-                          return ListTile(
-                            title: Text("Açıklama"),
-                          );
-                        },
-                        body: Column(
-                          children: [Text("Alperen")],
-                        ));
-                  });
-                },
                 leading: Icon(Icons.mail, color: Colors.white),
                 title: Text("Mail:", style: TextStyle(color: Colors.white)),
               ),
               ListTile(
                 leading: Icon(Icons.mail, color: Colors.white),
                 title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                trailing: ChoiceChip(
+                  label: Text(""),
+                  avatar: Icon(Icons.circle),
+                  selected: _selected,
+                  materialTapTargetSize: MaterialTapTargetSize.padded,
+                  onSelected: (value) {
+                    _selected = !_selected;
+                    print(value);
+                    setState(() {});
+                  },
+              ),),
+              ListTile(
+                leading: Icon(Icons.mail, color: Colors.white),
+                title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                trailing: Chip(label: Text(""),
+                  onDeleted: () {
+
+                  },
+                  deleteIcon: Icon(Icons.circle),
+                ),
               ),
               ListTile(
                 leading: Icon(Icons.mail, color: Colors.white),
                 title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                trailing: Switch(
+                  value: _selected,
+                  onChanged: (value) {},
+                ),
               ),
               ListTile(
                 leading: Icon(Icons.mail, color: Colors.white),
                 title: Text("Mail:", style: TextStyle(color: Colors.white)),
-              ),
-              ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                trailing: CupertinoSwitch(value: _selected, onChanged: (value) {
+
+                },),
               ),
               ListTile(
                 leading: Icon(Icons.mail, color: Colors.white),

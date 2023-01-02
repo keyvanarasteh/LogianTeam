@@ -1,6 +1,7 @@
 import 'package:angle_on/screens/discover_page.dart';
 import 'package:angle_on/screens/home_page.dart';
 import 'package:angle_on/screens/my_picks_page.dart';
+import 'package:angle_on/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/app_constants.dart';
@@ -87,13 +88,19 @@ class _DesktopState extends State<Desktop> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
-            child: CircleAvatar(),
+            child: InkWell(
+              onTap: () {
+                  pageController = 3;
+                  setState(() {});
+              },
+                child: CircleAvatar(),
+            ),
           )
         ],
       ),
       body: IndexedStack(
         index: pageController,
-        children: [HomePage(), DiscoverPage(), MyPicksPage()],
+        children: [HomePage(), DiscoverPage(), MyPicksPage(),ProfilePage(),],
       ),
     );
   }
