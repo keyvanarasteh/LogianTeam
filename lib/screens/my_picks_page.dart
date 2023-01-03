@@ -1,8 +1,6 @@
 import 'package:angle_on/constants/app_constants.dart';
 import 'package:flutter/material.dart';
 
-import '../components/mobile_appBar.dart';
-
 class MyPicksPage extends StatefulWidget {
   const MyPicksPage({Key? key}) : super(key: key);
 
@@ -57,7 +55,6 @@ class _MyPicksPageState extends State<MyPicksPage> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    var appBarheight = AppBar().preferredSize.height;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -130,7 +127,9 @@ class _MyPicksPageState extends State<MyPicksPage> {
                             ],
                           ),
                           SizedBox(
-                            width: 50,
+                            width: width > 800
+                                ?50
+                                :0
                           ),
                           width > 800
                               ? SizedBox(
@@ -188,8 +187,10 @@ class _MyPicksPageState extends State<MyPicksPage> {
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            width: 50,
+                           SizedBox(
+                            width: width > 800
+                                ?50
+                                :0
                           ),
                           width > 800
                               ? SizedBox(
@@ -248,7 +249,9 @@ class _MyPicksPageState extends State<MyPicksPage> {
                             ],
                           ),
                           SizedBox(
-                            width: 50,
+                            width: width > 800
+                                ?50
+                                :0,
                           ),
                           width > 800
                               ? SizedBox(
@@ -306,8 +309,10 @@ class _MyPicksPageState extends State<MyPicksPage> {
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            width: 50,
+                           SizedBox(
+                            width: width > 800
+                                ?50
+                                :0,
                           ),
                           width > 800
                               ? SizedBox(
