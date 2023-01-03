@@ -80,7 +80,7 @@ class _DesktopState extends State<Desktop> {
                   setState(() {});
                 },
                 child: Text(
-                  "My Pick",
+                  "My Picks",
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 )),
           ],
@@ -90,17 +90,22 @@ class _DesktopState extends State<Desktop> {
             padding: const EdgeInsets.only(right: 16.0),
             child: InkWell(
               onTap: () {
-                  pageController = 3;
-                  setState(() {});
+                pageController = 3;
+                setState(() {});
               },
-                child: CircleAvatar(),
+              child: CircleAvatar(),
             ),
           )
         ],
       ),
       body: IndexedStack(
         index: pageController,
-        children: [HomePage(), DiscoverPage(), MyPicksPage(),ProfilePage(),],
+        children: [
+          HomePage(),
+          DiscoverPage(),
+          MyPicksPage(),
+          ProfilePage(),
+        ],
       ),
     );
   }
