@@ -28,6 +28,9 @@ class MyApp extends StatelessWidget {
           primaryColor: AppConstants.primaryAngleOnColor,
           scaffoldBackgroundColor: AppConstants.primaryAngleOnColor,
           backgroundColor: AppConstants.primaryAngleOnColor,
+          iconTheme: IconThemeData(
+            color: AppConstants.primaryAngleOnColor,
+          ),
           appBarTheme: AppBarTheme(color: AppConstants.primaryAngleOnColor)),
       home: const SelectScreen(),
     );
