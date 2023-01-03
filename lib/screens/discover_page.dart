@@ -461,7 +461,7 @@ class _HomePageState extends State<DiscoverPage> {
                     color: AppConstants.secondAngleOnColor,
                   ),
                   Container(
-                    color: Colors.yellow,
+                    color: Colors.red,
                   ),
                 ],
               ),

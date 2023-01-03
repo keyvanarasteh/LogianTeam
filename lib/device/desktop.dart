@@ -63,7 +63,7 @@ class _DesktopState extends State<Desktop> {
                 },
                 child: Text(
                   "Home",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 14, color: Colors.white),
                 )),
             TextButton(
                 onPressed: () {
@@ -72,7 +72,7 @@ class _DesktopState extends State<Desktop> {
                 },
                 child: Text(
                   "Discover",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 14, color: Colors.white),
                 )),
             TextButton(
                 onPressed: () {
@@ -81,7 +81,7 @@ class _DesktopState extends State<Desktop> {
                 },
                 child: Text(
                   "My Picks",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 14, color: Colors.white),
                 )),
           ],
         ),
@@ -93,7 +93,9 @@ class _DesktopState extends State<Desktop> {
                 pageController = 3;
                 setState(() {});
               },
-              child: CircleAvatar(),
+              child: CircleAvatar(
+                backgroundImage: AssetImage("assets/alperen.jpeg"),
+              ),
             ),
           )
         ],

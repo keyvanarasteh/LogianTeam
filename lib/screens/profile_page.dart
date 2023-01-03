@@ -77,106 +77,58 @@ class _ProfilePageState extends State<ProfilePage> {
             delegate: SliverChildListDelegate([
               ListTile(
                 leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                title: Text("Mail: alperen@gmail.com",
+                    style: TextStyle(color: Colors.white)),
               ),
               ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-                trailing: ChoiceChip(
-                  label: Text(""),
-                  avatar: Icon(Icons.circle),
-                  selected: _selected,
-                  materialTapTargetSize: MaterialTapTargetSize.padded,
-                  onSelected: (value) {
-                    _selected = !_selected;
-                    print(value);
-                    setState(() {});
-                  },
-              ),),
-              ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-                trailing: Chip(label: Text(""),
-                  onDeleted: () {
-
-                  },
-                  deleteIcon: Icon(Icons.circle),
-                ),
+                leading: Icon(Icons.person, color: Colors.white),
+                title: Text("Kullanıcı adı: Alpemi",
+                    style: TextStyle(color: Colors.white)),
               ),
               ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-                trailing: Switch(
-                  value: _selected,
-                  onChanged: (value) {},
-                ),
+                leading: Icon(Icons.download, color: Colors.white),
+                title:
+                    Text("İndirilenler", style: TextStyle(color: Colors.white)),
               ),
               ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-                trailing: CupertinoSwitch(value: _selected, onChanged: (value) {
-
-                },),
+                leading: Icon(Icons.wifi, color: Colors.white),
+                title: Text("Hücresel veri kullanımı",
+                    style: TextStyle(color: Colors.white)),
               ),
               ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                leading: Icon(Icons.notifications, color: Colors.white),
+                title:
+                    Text("Bildirimler", style: TextStyle(color: Colors.white)),
               ),
               ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                leading: Icon(Icons.speed, color: Colors.white),
+                title: Text("internet hız testi",
+                    style: TextStyle(color: Colors.white)),
               ),
               ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                leading: Icon(Icons.security, color: Colors.white),
+                title: Text("Gizlilik", style: TextStyle(color: Colors.white)),
               ),
               ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                leading: Icon(Icons.verified_sharp, color: Colors.white),
+                title:
+                    Text("Version: 1.0", style: TextStyle(color: Colors.white)),
               ),
               ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                leading: Icon(Icons.file_copy, color: Colors.white),
+                title: Text("Çerez Tercihleri",
+                    style: TextStyle(color: Colors.white)),
               ),
               ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                leading: Icon(Icons.text_snippet, color: Colors.white),
+                title: Text("Kullanım koşulları",
+                    style: TextStyle(color: Colors.white)),
               ),
               ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-              ),
-              ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-              ),
-              ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-              ),
-              ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-              ),
-              ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-              ),
-              ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-              ),
-              ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-              ),
-              ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
-              ),
-              ListTile(
-                leading: Icon(Icons.mail, color: Colors.white),
-                title: Text("Mail:", style: TextStyle(color: Colors.white)),
+                leading:
+                    Icon(Icons.signal_cellular_alt_sharp, color: Colors.white),
+                title: Text("Ağı kontrol et",
+                    style: TextStyle(color: Colors.white)),
               ),
             ]),
           ),
